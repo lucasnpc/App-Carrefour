@@ -3,50 +3,33 @@ package com.example.appcarrefour.main.presentation.main
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Person
-import androidx.compose.material.icons.outlined.Store
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.example.appcarrefour.R
-import com.example.appcarrefour.main.utils.MainRoutes
+import com.example.appcarrefour.main.presentation.main.components.ButtonCashier
+import com.example.appcarrefour.main.presentation.main.components.ButtonReports
+import com.example.appcarrefour.main.presentation.main.components.MainHeader
+import com.example.appcarrefour.ui.commons.CarrefourColumn
 import com.example.appcarrefour.ui.commons.CarrefourIcon
-import com.example.appcarrefour.utils.*
+import com.example.appcarrefour.utils.Dimen32dp
+import com.example.appcarrefour.utils.Dimen350dp
 
 @Composable
 fun MainScreen(navController: NavHostController) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(top = Dimen80dp)
-        ) {
-            Icon(
-                imageVector = Icons.Outlined.Person,
-                contentDescription = stringResource(id = R.string.person_icon_description),
-                modifier = Modifier
-                    .width(Dimen48dp)
-                    .height(Dimen48dp),
-                tint = Color.White
-            )
-            Text(text = "Carrefour", color = Color.White, fontSize = Font24sp)
-        }
-        Column(
+        MainHeader()
+        CarrefourColumn(
             modifier = Modifier
-                .align(Alignment.BottomCenter)
                 .fillMaxWidth()
+                .align(Alignment.BottomCenter)
                 .background(
                     Color.White,
                     RoundedCornerShape(topStart = Dimen32dp, topEnd = Dimen32dp)
                 )
-                .height(Dimen350dp),
-            verticalArrangement = Arrangement.SpaceBetween,
-            horizontalAlignment = Alignment.CenterHorizontally
+                .height(Dimen350dp)
         ) {
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -54,45 +37,11 @@ fun MainScreen(navController: NavHostController) {
                     .fillMaxWidth()
                     .padding(16.dp)
             ) {
-                Button(
-                    onClick = { navController.navigate(MainRoutes.CashierScreen.route) },
-                    colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.primaryVariant)
-                ) {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Icon(
-                            imageVector = Icons.Outlined.Store, contentDescription = stringResource(
-                                R.string.store_icon_description
-                            ), modifier = Modifier
-                                .width(Dimen122dp)
-                                .height(Dimen60dp),
-                            tint = Color.White
-                        )
-                        Text(
-                            text = stringResource(R.string.cashier),
-                            color = Color.White,
-                            fontSize = Font24sp
-                        )
-                    }
+                ButtonCashier { route ->
+                    navController.navigate(route)
                 }
-                Button(
-                    onClick = { navController.navigate(MainRoutes.ReportScreen.route) },
-                    colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.primaryVariant)
-                ) {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Icon(
-                            imageVector = Icons.Outlined.Store, contentDescription = stringResource(
-                                R.string.store_icon_description
-                            ), modifier = Modifier
-                                .width(Dimen122dp)
-                                .height(Dimen60dp),
-                            tint = Color.White
-                        )
-                        Text(
-                            text = stringResource(R.string.reports),
-                            color = Color.White,
-                            fontSize = Font24sp
-                        )
-                    }
+                ButtonReports { route ->
+                    navController.navigate(route)
                 }
             }
             CarrefourIcon()

@@ -8,6 +8,9 @@
     <string name="google_icon_description">Google Icon</string>
     <string name="facebook_icon_description">Facebook Icon</string>
     <string name="store_icon_description">Store Icon</string>
+    <string name="analytics_icon_description">Analytics Icon</string>
     <string name="cashier">Caixa</string>
     <string name="reports">Relatórios</string>
+    <string name="save_money_icon_description">Save money icon</string>
+    <string name="spend_money_icon_description">Spend money icon</string>
 </resources>

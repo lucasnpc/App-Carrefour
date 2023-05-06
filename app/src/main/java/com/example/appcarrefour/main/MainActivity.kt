@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                             MainScreen(navController)
                         }
                         composable(route = MainRoutes.CashierScreen.route) {
-                            CashierScreen()
+                            CashierScreen(navController)
                         }
                         composable(route = MainRoutes.ReportScreen.route) {
                             ReportScreen()
