@@ -35,7 +35,8 @@ inline fun SecretEditText(userSecret: String, crossinline returnSecret: (String)
             backgroundColor = Color.White,
             focusedIndicatorColor = PrimaryDark,
             focusedLabelColor = PrimaryDark,
-            unfocusedIndicatorColor = PrimaryDark
+            unfocusedIndicatorColor = PrimaryDark,
+            cursorColor = PrimaryDark
         ),
         visualTransformation = PasswordVisualTransformation()
     )

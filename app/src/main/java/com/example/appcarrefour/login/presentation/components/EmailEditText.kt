@@ -36,7 +36,8 @@ inline fun EmailEditText(userEmail: String, crossinline returnEmail: (String) ->
             backgroundColor = Color.White,
             focusedIndicatorColor = PrimaryDark,
             focusedLabelColor = PrimaryDark,
-            unfocusedIndicatorColor = PrimaryDark
+            unfocusedIndicatorColor = PrimaryDark,
+            cursorColor = PrimaryDark
         ),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
     )

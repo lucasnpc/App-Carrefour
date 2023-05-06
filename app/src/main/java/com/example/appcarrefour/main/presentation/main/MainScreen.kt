@@ -1,4 +1,4 @@
-package com.example.appcarrefour.main.presentation
+package com.example.appcarrefour.main.presentation.main
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -13,12 +13,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.appcarrefour.R
+import com.example.appcarrefour.main.utils.MainRoutes
 import com.example.appcarrefour.ui.commons.CarrefourIcon
 import com.example.appcarrefour.utils.*
 
 @Composable
-fun MainScreen() {
+fun MainScreen(navController: NavHostController) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -53,7 +55,7 @@ fun MainScreen() {
                     .padding(16.dp)
             ) {
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = { navController.navigate(MainRoutes.CashierScreen.route) },
                     colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.primaryVariant)
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -73,7 +75,7 @@ fun MainScreen() {
                     }
                 }
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = { navController.navigate(MainRoutes.ReportScreen.route) },
                     colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.primaryVariant)
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
