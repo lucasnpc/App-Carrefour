@@ -13,9 +13,9 @@ import com.example.appcarrefour.R
 import com.example.appcarrefour.ui.theme.PrimaryDark
 
 @Composable
-fun LoginButton(){
+inline fun LoginButton(crossinline loginClick: () -> Unit) {
     Button(
-        onClick = { /*TODO*/ },
+        onClick = { loginClick() },
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(backgroundColor = PrimaryDark)
     ) {

@@ -3,6 +3,11 @@
     <string name="carrefour_logo_description">Logo carrefour</string>
     <string name="email">E-mail</string>
     <string name="secret">Senha</string>
-    <string name="user_icon_description">User icon</string>
+    <string name="person_icon_description">Person icon</string>
     <string name="login_text">Log In</string>
+    <string name="google_icon_description">Google Icon</string>
+    <string name="facebook_icon_description">Facebook Icon</string>
+    <string name="store_icon_description">Store Icon</string>
+    <string name="cashier">Caixa</string>
+    <string name="reports">Relatórios</string>
 </resources>

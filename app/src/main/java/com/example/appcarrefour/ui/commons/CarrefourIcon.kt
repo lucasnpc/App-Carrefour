@@ -1,4 +1,4 @@
-package com.example.appcarrefour.login.presentation.components
+package com.example.appcarrefour.ui.commons
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.height

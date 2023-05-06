@@ -27,7 +27,7 @@ inline fun EmailEditText(userEmail: String, crossinline returnEmail: (String) ->
         leadingIcon = {
             Icon(
                 imageVector = Icons.Outlined.Person, contentDescription = stringResource(
-                    R.string.user_icon_description
+                    R.string.person_icon_description
                 ), tint = Primary
             )
         },
