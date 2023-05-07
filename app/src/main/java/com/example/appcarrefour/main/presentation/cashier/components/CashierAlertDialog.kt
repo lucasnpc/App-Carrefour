@@ -21,14 +21,13 @@ import com.example.appcarrefour.utils.Dimen8dp
 @Composable
 inline fun CashierAlertDialog(
     openDialog: MutableState<Pair<Boolean, String>>,
-    crossinline dismissRequest: (Boolean) -> Unit
+    crossinline dismissRequest: (Pair<Boolean, String>) -> Unit
 ) {
     if (openDialog.value.first) {
         AlertDialog(
             backgroundColor = Color.White,
             onDismissRequest = {
-                openDialog.value = false to ""
-                dismissRequest(false)
+                dismissRequest(false to openDialog.value.second)
             },
             title = {
                 Text(
@@ -47,8 +46,7 @@ inline fun CashierAlertDialog(
                 ) {
                     OutlinedButton(
                         onClick = {
-                            openDialog.value = false to ""
-                            dismissRequest(true)
+                            dismissRequest(true to openDialog.value.second)
                         },
                         colors = ButtonDefaults.buttonColors(
                             backgroundColor = Color.White,
@@ -60,8 +58,7 @@ inline fun CashierAlertDialog(
                     }
                     OutlinedButton(
                         onClick = {
-                            openDialog.value = false to ""
-                            dismissRequest(false)
+                            dismissRequest(false to openDialog.value.second)
                         },
                         colors = ButtonDefaults.buttonColors(
                             backgroundColor = Color.White,

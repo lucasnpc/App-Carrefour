@@ -21,13 +21,23 @@ import com.example.appcarrefour.ui.theme.PrimaryRed
 import com.example.appcarrefour.utils.Dimen150dp
 
 @Composable
-fun RegisterCashButtons(openDialog: MutableState<Pair<Boolean, String>>) {
+fun RegisterCashButtons(
+    openDialog: MutableState<Pair<Boolean, String>>,
+    description: String,
+    isDescriptionFieldError: MutableState<Boolean>
+) {
     Row(
         horizontalArrangement = Arrangement.SpaceAround,
         modifier = Modifier.fillMaxWidth()
     ) {
         OutlinedButton(
-            onClick = { openDialog.value = true to SAVE_MONEY_TYPE },
+            onClick = {
+                if (description.isEmpty()) {
+                    isDescriptionFieldError.value = true
+                    return@OutlinedButton
+                }
+                openDialog.value = true to SAVE_MONEY_TYPE
+            },
             colors = ButtonDefaults.buttonColors(backgroundColor = PrimaryGreen),
             modifier = Modifier.width(Dimen150dp)
         ) {
@@ -38,7 +48,13 @@ fun RegisterCashButtons(openDialog: MutableState<Pair<Boolean, String>>) {
             )
         }
         OutlinedButton(
-            onClick = { openDialog.value = true to SPEND_MONEY_TYPE },
+            onClick = {
+                if (description.isEmpty()) {
+                    isDescriptionFieldError.value = true
+                    return@OutlinedButton
+                }
+                openDialog.value = true to SPEND_MONEY_TYPE
+            },
             colors = ButtonDefaults.buttonColors(backgroundColor = PrimaryRed),
             modifier = Modifier.width(Dimen150dp)
         ) {

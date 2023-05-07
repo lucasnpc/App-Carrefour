@@ -17,4 +17,7 @@
     <string name="value">Valor</string>
     <string name="date">Data</string>
     <string name="type">Tipo</string>
+    <string name="select_date">Selecionar data: %s</string>
+    <string name="open_calendary">Abrir calendário</string>
+    <string name="somethiing_went_wrong">Alguma coisa deu errado</string>
 </resources>

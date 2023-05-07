@@ -5,12 +5,13 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.example.appcarrefour.main.domain.model.CashRegister
 import com.example.appcarrefour.ui.theme.NeutralGray
 import com.example.appcarrefour.utils.Dimen370dp
 import com.example.appcarrefour.utils.Dimen8dp
 
 @Composable
-fun ReportsList(){
+fun ReportsList(list: List<CashRegister>) {
     LazyColumn(
         modifier = Modifier
             .height(Dimen370dp)
@@ -22,10 +23,10 @@ fun ReportsList(){
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                DescriptionColumn()
-                ValueColumn()
-                DateColumn()
-                TypeColumn()
+                DescriptionColumn(list)
+                ValueColumn(list)
+                DateColumn(list)
+                TypeColumn(list)
             }
         }
     }

@@ -9,14 +9,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import com.example.appcarrefour.R
-import com.example.appcarrefour.main.presentation.report.exampleItems
+import com.example.appcarrefour.main.domain.model.CashRegister
 import com.example.appcarrefour.utils.Dimen90dp
 
 @Composable
-fun DescriptionColumn(){
+fun DescriptionColumn(list: List<CashRegister>) {
     Column {
         Text(stringResource(id = R.string.description), color = Color.Black)
-        exampleItems.forEach { item ->
+        list.forEach { item ->
             Text(
                 text = item.description,
                 color = Color.Black,

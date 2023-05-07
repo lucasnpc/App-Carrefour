@@ -6,13 +6,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import com.example.appcarrefour.R
-import com.example.appcarrefour.main.presentation.report.exampleItems
+import com.example.appcarrefour.main.domain.model.CashRegister
 
 @Composable
-fun TypeColumn(){
+fun TypeColumn(list: List<CashRegister>) {
     Column {
         Text(stringResource(id = R.string.type), color = Color.Black)
-        exampleItems.forEach { item ->
+        list.forEach { item ->
             Text(text = item.type, color = Color.Black)
         }
     }

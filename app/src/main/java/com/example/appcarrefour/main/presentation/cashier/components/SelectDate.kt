@@ -8,17 +8,18 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import com.example.appcarrefour.R
 import com.example.appcarrefour.ui.theme.PrimaryVariant
 
 @Composable
 fun SelectDate(date: MutableState<String>, datePickerDialog: DatePickerDialog) {
     Column {
-        Text(text = "Selecionar data: ${date.value}", color = Color.Black)
+        Text(text = stringResource(id = R.string.select_date, date.value), color = Color.Black)
         OutlinedButton(onClick = {
             datePickerDialog.show()
         }, colors = ButtonDefaults.buttonColors(backgroundColor = PrimaryVariant)) {
-            Text(text = "Abrir calendário", color = Color.White)
+            Text(text = stringResource(R.string.open_calendary), color = Color.White)
         }
     }
-
 }

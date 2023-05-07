@@ -10,9 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import com.example.appcarrefour.main.domain.model.CashRegister
-import com.example.appcarrefour.main.presentation.cashier.components.SAVE_MONEY_TYPE
-import com.example.appcarrefour.main.presentation.cashier.components.SPEND_MONEY_TYPE
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.appcarrefour.main.presentation.report.components.FilterDate
 import com.example.appcarrefour.main.presentation.report.components.RegisterConsolidate
 import com.example.appcarrefour.main.presentation.report.components.ReportHeader
@@ -25,18 +23,15 @@ import com.example.appcarrefour.utils.Dimen16dp
 import com.example.appcarrefour.utils.Dimen32dp
 import com.example.appcarrefour.utils.Dimen650dp
 
-val exampleItems = listOf(
-    CashRegister("dasdsadasdasdasdasdas", 123.0, "24/02/1999", SPEND_MONEY_TYPE),
-    CashRegister("null", 123.0, "24/02/1999", SAVE_MONEY_TYPE),
-    CashRegister("null", 123.0, "24/02/1999", SAVE_MONEY_TYPE)
-)
-
 @Composable
-fun ReportScreen() {
+fun ReportScreen(reportViewmodel: ReportViewmodel = hiltViewModel()) {
     val date = remember { mutableStateOf("") }
     val context = LocalContext.current
+    val list = reportViewmodel.cashRegisterList
 
-    val datePickerDialog = carrefourDatePickDialog(context, date)
+    val datePickerDialog = carrefourDatePickDialog(context, date){
+        reportViewmodel.getReportsByDate(it)
+    }
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
         ReportHeader()
         CarrefourColumn(
@@ -51,9 +46,9 @@ fun ReportScreen() {
                 .padding(Dimen16dp)
         ) {
             Column {
-                ReportsList()
+                ReportsList(list.value)
                 Spacer(modifier = Modifier.height(Dimen10dp))
-                RegisterConsolidate()
+                RegisterConsolidate(list.value)
                 Spacer(modifier = Modifier.height(Dimen10dp))
                 FilterDate(date, datePickerDialog)
             }
