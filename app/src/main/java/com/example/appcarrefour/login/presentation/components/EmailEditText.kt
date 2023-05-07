@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import com.example.appcarrefour.R
+import com.example.appcarrefour.ui.theme.MidGray
 import com.example.appcarrefour.ui.theme.Primary
 import com.example.appcarrefour.ui.theme.PrimaryDark
 
@@ -37,7 +38,8 @@ inline fun EmailEditText(userEmail: String, crossinline returnEmail: (String) ->
             focusedIndicatorColor = PrimaryDark,
             focusedLabelColor = PrimaryDark,
             unfocusedIndicatorColor = PrimaryDark,
-            cursorColor = PrimaryDark
+            cursorColor = PrimaryDark,
+            unfocusedLabelColor = MidGray
         ),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
     )
