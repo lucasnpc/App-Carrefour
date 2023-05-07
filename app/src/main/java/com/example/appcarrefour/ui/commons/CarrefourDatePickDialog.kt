@@ -1,4 +1,4 @@
-package com.example.appcarrefour.main.presentation.cashier.components
+package com.example.appcarrefour.ui.commons
 
 import android.app.DatePickerDialog
 import android.content.Context
@@ -6,7 +6,7 @@ import android.widget.DatePicker
 import androidx.compose.runtime.MutableState
 import java.util.*
 
-fun cashierDatePickDialog(context: Context, date: MutableState<String>): DatePickerDialog {
+fun carrefourDatePickDialog(context: Context, date: MutableState<String>): DatePickerDialog {
     val calendar = Calendar.getInstance()
     calendar.time = Date()
 

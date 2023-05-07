@@ -13,6 +13,7 @@ import androidx.compose.material.icons.filled.Savings
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import com.example.appcarrefour.R
 import com.example.appcarrefour.ui.theme.PrimaryGreen
@@ -26,18 +27,18 @@ fun RegisterCashButtons(openDialog: MutableState<Pair<Boolean, String>>) {
         modifier = Modifier.fillMaxWidth()
     ) {
         OutlinedButton(
-            onClick = { openDialog.value = true to SAVE_MONEY },
+            onClick = { openDialog.value = true to SAVE_MONEY_TYPE },
             colors = ButtonDefaults.buttonColors(backgroundColor = PrimaryGreen),
             modifier = Modifier.width(Dimen150dp)
         ) {
             Icon(
                 imageVector = Icons.Filled.Savings, contentDescription = stringResource(
                     R.string.save_money_icon_description
-                )
+                ), tint = Color.White
             )
         }
         OutlinedButton(
-            onClick = { openDialog.value = true to SPEND_MONEY },
+            onClick = { openDialog.value = true to SPEND_MONEY_TYPE },
             colors = ButtonDefaults.buttonColors(backgroundColor = PrimaryRed),
             modifier = Modifier.width(Dimen150dp)
         ) {
@@ -45,11 +46,11 @@ fun RegisterCashButtons(openDialog: MutableState<Pair<Boolean, String>>) {
                 imageVector = Icons.Filled.MoneyOff,
                 contentDescription = stringResource(
                     R.string.spend_money_icon_description
-                )
+                ), tint = Color.White
             )
         }
     }
 }
 
-const val SAVE_MONEY = "Save"
-const val SPEND_MONEY = "Spend"
+const val SAVE_MONEY_TYPE = "Save"
+const val SPEND_MONEY_TYPE = "Spend"

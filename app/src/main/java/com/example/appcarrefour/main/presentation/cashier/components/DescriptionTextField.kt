@@ -7,6 +7,9 @@ import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.example.appcarrefour.ui.theme.MidGray
+import com.example.appcarrefour.ui.theme.NeutralGray
+import com.example.appcarrefour.ui.theme.PrimaryDark
 
 @Composable
 inline fun DescriptionTextField(
@@ -22,8 +25,12 @@ inline fun DescriptionTextField(
         modifier = Modifier.fillMaxWidth(),
         label = { Text(text = "Descrição") },
         colors = TextFieldDefaults.textFieldColors(
-            textColor = Color.Black,
-            backgroundColor = Color.White
+            backgroundColor = Color.White,
+            focusedIndicatorColor = PrimaryDark,
+            focusedLabelColor = PrimaryDark,
+            unfocusedIndicatorColor = PrimaryDark,
+            cursorColor = PrimaryDark,
+            unfocusedLabelColor = MidGray
         )
     )
 }

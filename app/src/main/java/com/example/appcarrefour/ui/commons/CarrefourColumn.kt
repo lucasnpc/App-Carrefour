@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 @Composable
 inline fun CarrefourColumn(
     modifier: Modifier,
-    crossinline columnContent: @Composable ColumnScope.() -> Unit
+    crossinline columnContent: @Composable() (ColumnScope.() -> Unit)
 ) {
     Column(
         modifier = modifier,

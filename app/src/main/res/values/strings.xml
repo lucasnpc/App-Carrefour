@@ -13,4 +13,8 @@
     <string name="reports">Relatórios</string>
     <string name="save_money_icon_description">Save money icon</string>
     <string name="spend_money_icon_description">Spend money icon</string>
+    <string name="description">Descrição</string>
+    <string name="value">Valor</string>
+    <string name="date">Data</string>
+    <string name="type">Tipo</string>
 </resources>

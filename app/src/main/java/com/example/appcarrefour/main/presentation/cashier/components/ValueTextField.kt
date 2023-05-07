@@ -9,6 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
+import com.example.appcarrefour.ui.theme.MidGray
+import com.example.appcarrefour.ui.theme.PrimaryDark
 
 @Composable
 inline fun ValueTextField(value: String, crossinline returnValue: (String) -> Unit) {
@@ -24,8 +26,12 @@ inline fun ValueTextField(value: String, crossinline returnValue: (String) -> Un
         },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
         colors = TextFieldDefaults.textFieldColors(
-            textColor = Color.Black,
-            backgroundColor = Color.White
+            backgroundColor = Color.White,
+            focusedIndicatorColor = PrimaryDark,
+            focusedLabelColor = PrimaryDark,
+            unfocusedIndicatorColor = PrimaryDark,
+            cursorColor = PrimaryDark,
+            unfocusedLabelColor = MidGray
         )
     )
 }
