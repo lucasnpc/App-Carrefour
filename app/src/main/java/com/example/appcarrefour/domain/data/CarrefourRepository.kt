@@ -1,7 +1,6 @@
 package com.example.appcarrefour.domain.data
 
 import com.example.appcarrefour.data.dto.CashRegisterDto
-import com.example.appcarrefour.main.domain.model.CashRegister
 import java.util.*
 
 interface CarrefourRepository {

@@ -8,9 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.sp
 import com.example.appcarrefour.R
 import com.example.appcarrefour.ui.theme.PrimaryDark
+import com.example.appcarrefour.utils.Font16sp
 
 @Composable
 inline fun LoginButton(crossinline loginClick: () -> Unit) {
@@ -19,6 +19,6 @@ inline fun LoginButton(crossinline loginClick: () -> Unit) {
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(backgroundColor = PrimaryDark)
     ) {
-        Text(text = stringResource(R.string.login_text), fontSize = 16.sp, color = Color.White)
+        Text(text = stringResource(R.string.login_text), fontSize = Font16sp, color = Color.White)
     }
 }
