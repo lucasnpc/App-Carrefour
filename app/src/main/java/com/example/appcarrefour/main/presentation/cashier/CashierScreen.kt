@@ -8,15 +8,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.example.appcarrefour.main.domain.model.CashRegister
 import com.example.appcarrefour.main.presentation.cashier.components.*
 import com.example.appcarrefour.ui.commons.CarrefourColumn
 import com.example.appcarrefour.ui.commons.CarrefourIcon
 import com.example.appcarrefour.ui.commons.carrefourDatePickDialog
-import com.example.appcarrefour.utils.*
+import com.example.appcarrefour.utils.Dimen16dp
+import com.example.appcarrefour.utils.Dimen32dp
+import com.example.appcarrefour.utils.Dimen650dp
 
 @Composable
-fun CashierScreen(navController: NavHostController) {
+fun CashierScreen(
+    navController: NavHostController,
+    cashierViewmodel: CashierViewmodel = hiltViewModel()
+) {
     var description by remember { mutableStateOf("") }
     var value by remember { mutableStateOf("") }
 
@@ -29,8 +36,17 @@ fun CashierScreen(navController: NavHostController) {
     val openDialog = remember { mutableStateOf(false to "") }
 
     CashierAlertDialog(openDialog) { dismiss ->
-        if (dismiss)
+        if (dismiss) {
+            cashierViewmodel.saveCashRegister(
+                CashRegister(
+                    description,
+                    value.toDouble(),
+                    date.value,
+                    openDialog.value.second
+                )
+            )
             navController.popBackStack()
+        }
     }
 
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {

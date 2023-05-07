@@ -10,7 +10,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.example.appcarrefour.main.presentation.cashier.components.SelectDate
-import com.example.appcarrefour.utils.formatToBrazilian
+import com.example.appcarrefour.utils.toBrazilianDateFormat
 import java.util.*
 
 @Composable
@@ -20,6 +20,6 @@ fun FilterDate(date: MutableState<String>, datePickerDialog: DatePickerDialog) {
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         SelectDate(date, datePickerDialog)
-        Text(text = "Hoje: ${Date().formatToBrazilian()}", color = Color.Black)
+        Text(text = "Hoje: ${Date().toBrazilianDateFormat()}", color = Color.Black)
     }
 }

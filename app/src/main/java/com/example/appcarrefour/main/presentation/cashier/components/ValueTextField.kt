@@ -31,7 +31,8 @@ inline fun ValueTextField(value: String, crossinline returnValue: (String) -> Un
             focusedLabelColor = PrimaryDark,
             unfocusedIndicatorColor = PrimaryDark,
             cursorColor = PrimaryDark,
-            unfocusedLabelColor = MidGray
+            unfocusedLabelColor = MidGray,
+            textColor = Color.Black
         )
     )
 }

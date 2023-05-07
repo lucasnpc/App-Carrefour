@@ -15,7 +15,9 @@ import com.example.appcarrefour.main.presentation.cashier.CashierScreen
 import com.example.appcarrefour.main.presentation.report.ReportScreen
 import com.example.appcarrefour.main.utils.MainRoutes
 import com.example.appcarrefour.ui.theme.AppCarrefourTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
