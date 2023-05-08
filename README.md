@@ -31,4 +31,4 @@
 - Foram realizados testes unitários do Viewmodel, e ServiceLocators existentes no App.
 - Configurar task JacocoTestReport. (PENDENTE)
 - Testes criados até o momento 6.
-![Arquitetura](arquitetura.png)
+![Arquitetura](testes.png)
