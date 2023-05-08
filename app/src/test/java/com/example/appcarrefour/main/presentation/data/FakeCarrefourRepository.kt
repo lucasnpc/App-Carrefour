@@ -1,21 +1,18 @@
-package com.example.appcarrefour.data.repository
+package com.example.appcarrefour.main.presentation.data
 
-import com.example.appcarrefour.data.dao.CarrefourDao
 import com.example.appcarrefour.data.dto.CashRegisterDto
 import com.example.appcarrefour.domain.data.CarrefourRepository
 import java.util.*
 
-class CarrefourRepositoryImpl(private val carrefourDao: CarrefourDao) : CarrefourRepository {
+class FakeCarrefourRepository(private val list: List<CashRegisterDto>) : CarrefourRepository {
     override suspend fun saveCashRegister(cashRegisterDto: CashRegisterDto) {
-        carrefourDao.saveCashRegister(
-            cashRegisterDto
-        )
+        list.toMutableList().add(cashRegisterDto)
     }
 
     override suspend fun getCashRegisterByDateFilter(
         dateBegin: Date,
         dateEnd: Date
     ): List<CashRegisterDto> {
-        return carrefourDao.getCashRegisterByDateFilter(dateBegin, dateEnd)
+        return list
     }
 }

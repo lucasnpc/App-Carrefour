@@ -19,7 +19,7 @@ class ReportViewmodel @Inject constructor(private val mainUseCases: MainUseCases
 
     init {
         val today = Date()
-        getReportsByDate(today.toBrazilianDateFormat(), today.toBrazilianDateFormat())
+        getReportsByDate(beginDate = today.toBrazilianDateFormat())
     }
 
     fun getReportsByDate(beginDate: String, endDate: String = Date().toBrazilianDateFormat()) {
