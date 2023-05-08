@@ -28,4 +28,7 @@
 6. Clique em "Relatórios" para ver os registros do dia. (caso queira um compilado de datas mais antigas, use o botão "Abrir calendário" e escolha uma data retroativa).
 
 ## Testes
-
+- Foram realizados testes unitários do Viewmodel, e ServiceLocators existentes no App.
+- Configurar task JacocoTestReport. (PENDENTE)
+- Testes criados até o momento 6.
+![Arquitetura](arquitetura.png)
